@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="RootView" id="BYZ-38-t0r" customClass="RootViewController" customModule="BowlingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_mainmenu" translatesAutoresizingMaskIntoConstraints="NO" id="cEU-LF-30n">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKF-Hx-LYM">
+                                <rect key="frame" x="130" y="752" width="154" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="onStartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fix-X2-tPJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FKF-Hx-LYM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="9Xb-jE-XYD"/>
+                            <constraint firstItem="cEU-LF-30n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Afa-xN-AEa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FKF-Hx-LYM" secondAttribute="trailing" constant="130" id="W0A-qE-bSn"/>
+                            <constraint firstItem="cEU-LF-30n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YP8-8i-cSC"/>
+                            <constraint firstItem="cEU-LF-30n" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nnF-Yn-Vik"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="FKF-Hx-LYM" secondAttribute="bottom" constant="80" id="pnW-Il-YfC"/>
+                            <constraint firstAttribute="bottom" secondItem="cEU-LF-30n" secondAttribute="bottom" id="u0K-0I-RE3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="startBtn" destination="FKF-Hx-LYM" id="qrH-1a-Mk2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-197.10144927536234" y="106.47321428571428"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="Rz8-ie-CYQ">
+            <objects>
+                <viewController storyboardIdentifier="GameView" id="ERQ-Ts-eyf" customClass="GameViewController" customModule="BowlingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NHy-Rt-tAA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHX-ao-fqj">
+                                <rect key="frame" x="130" y="752" width="154" height="30"/>
+                                <state key="normal" title="Throw ball"/>
+                                <connections>
+                                    <action selector="onthrowBallBtn:" destination="ERQ-Ts-eyf" eventType="touchUpInside" id="S5i-Dl-ZDH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dQY-Uo-Pgu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dQY-Uo-Pgu" firstAttribute="bottom" secondItem="pHX-ao-fqj" secondAttribute="bottom" constant="80" id="WyS-mG-DWK"/>
+                            <constraint firstItem="dQY-Uo-Pgu" firstAttribute="trailing" secondItem="pHX-ao-fqj" secondAttribute="trailing" constant="130" id="caF-L3-BcZ"/>
+                            <constraint firstItem="pHX-ao-fqj" firstAttribute="leading" secondItem="dQY-Uo-Pgu" secondAttribute="leading" constant="130" id="d9S-G5-y3d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="throwBallBtn" destination="pHX-ao-fqj" id="W2T-fn-o99"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlD-d2-xIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_mainmenu" width="626" height="626"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
