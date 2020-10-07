@@ -10,6 +10,9 @@
 		D01C3F78252E3DEE00959955 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C3F77252E3DEE00959955 /* GameViewController.swift */; };
 		D01C3F7D252E3DFE00959955 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C3F7C252E3DFE00959955 /* GameViewModel.swift */; };
 		D01C3F82252E3E5F00959955 /* GameViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01C3F81252E3E5F00959955 /* GameViewModelTests.swift */; };
+		D07EA9B9252E3FF1000FA7FB /* ThrowData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9B8252E3FF1000FA7FB /* ThrowData.swift */; };
+		D07EA9C6252E41C4000FA7FB /* FrameDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9C5252E41C4000FA7FB /* FrameDataViewModel.swift */; };
+		D07EA9CE252E4332000FA7FB /* BowlingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9CD252E4332000FA7FB /* BowlingAppUITests.swift */; };
 		D08CD208252E39780068BEDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CD207252E39780068BEDC /* AppDelegate.swift */; };
 		D08CD20C252E39780068BEDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CD20B252E39780068BEDC /* RootViewController.swift */; };
 		D08CD20F252E39780068BEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08CD20D252E39780068BEDC /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 		D01C3F77252E3DEE00959955 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D01C3F7C252E3DFE00959955 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		D01C3F81252E3E5F00959955 /* GameViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModelTests.swift; sourceTree = "<group>"; };
+		D07EA9B8252E3FF1000FA7FB /* ThrowData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrowData.swift; sourceTree = "<group>"; };
+		D07EA9C5252E41C4000FA7FB /* FrameDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameDataViewModel.swift; sourceTree = "<group>"; };
+		D07EA9CD252E4332000FA7FB /* BowlingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingAppUITests.swift; sourceTree = "<group>"; };
 		D08CD204252E39780068BEDC /* BowlingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08CD207252E39780068BEDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08CD20B252E39780068BEDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				D08CD22B252E397A0068BEDC /* Info.plist */,
+				D07EA9CD252E4332000FA7FB /* BowlingAppUITests.swift */,
 			);
 			path = BowlingAppUITests;
 			sourceTree = "<group>";
@@ -137,6 +144,7 @@
 		D08CD23A252E39E90068BEDC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D07EA9B8252E3FF1000FA7FB /* ThrowData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D01C3F7C252E3DFE00959955 /* GameViewModel.swift */,
+				D07EA9C5252E41C4000FA7FB /* FrameDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -251,6 +260,7 @@
 					};
 					D08CD224252E397A0068BEDC = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 						TestTargetID = D08CD203252E39780068BEDC;
 					};
 				};
@@ -310,6 +320,8 @@
 				D01C3F7D252E3DFE00959955 /* GameViewModel.swift in Sources */,
 				D08CD20C252E39780068BEDC /* RootViewController.swift in Sources */,
 				D01C3F78252E3DEE00959955 /* GameViewController.swift in Sources */,
+				D07EA9B9252E3FF1000FA7FB /* ThrowData.swift in Sources */,
+				D07EA9C6252E41C4000FA7FB /* FrameDataViewModel.swift in Sources */,
 				D08CD208252E39780068BEDC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07EA9CE252E4332000FA7FB /* BowlingAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,7 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68UCR527YD;
 				INFOPLIST_FILE = BowlingAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68UCR527YD;
 				INFOPLIST_FILE = BowlingAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,6 +584,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68UCR527YD;
 				INFOPLIST_FILE = BowlingAppUITests/Info.plist;
@@ -581,6 +595,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lionel.BowlingAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = BowlingApp;
@@ -591,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68UCR527YD;
 				INFOPLIST_FILE = BowlingAppUITests/Info.plist;

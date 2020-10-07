@@ -21,5 +21,10 @@ class GameViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         viewModel = nil
     }
+    
+    func testScore_MissedThrow(){
+        viewModel.throwBall(pins: 0)
+        XCTAssertEqual(viewModel.score , 0)
+    }
 
 }
