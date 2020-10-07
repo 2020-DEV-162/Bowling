@@ -25,7 +25,11 @@ class GameViewModel {
         var ballThrown = 0
         
         for _ in 1...10 {
-            if(isSpare(ballThrown: ballThrown)){
+            if(isStrike(ballThrown: ballThrown)){
+                result += 10 + throwsData[ballThrown + 1].fallenPins + throwsData[ballThrown + 2].fallenPins
+                ballThrown += 1
+            }
+            else if(isSpare(ballThrown: ballThrown)){
                 result += 10 + throwsData[ballThrown + 2].fallenPins
                 ballThrown += 2
             }else{
@@ -61,6 +65,10 @@ class GameViewModel {
     
     func isSpare(ballThrown: Int) -> Bool {
         return throwsData[ballThrown].fallenPins + throwsData[ballThrown + 1].fallenPins == 10 ? true : false
+    }
+    
+    func isStrike(ballThrown: Int) -> Bool {
+        return throwsData[ballThrown].fallenPins == 10 ? true : false
     }
     
     

@@ -33,11 +33,19 @@ class GameViewModelTests: XCTestCase {
     }
     
     func testScore_Spare(){
-        viewModel.throwBall(pins: 4)
-        viewModel.throwBall(pins: 6)
+        viewModel.throwBall(pins: 4) // Spare
+        viewModel.throwBall(pins: 6) // == 10 pins in 2 throws
         viewModel.throwBall(pins: 3)
         viewModel.throwBallMultipleTimes(pins: 0,tries: 17)
         XCTAssertEqual(viewModel.score , 16)
+    }
+    
+    func testScore_Strike(){
+        viewModel.throwBall(pins: 10) // Strike == 10 pins in 1 throw
+        viewModel.throwBall(pins: 2)
+        viewModel.throwBall(pins: 7)
+        viewModel.throwBallMultipleTimes(pins: 0,tries: 17)
+        XCTAssertEqual(viewModel.score , 28)
     }
     
     
