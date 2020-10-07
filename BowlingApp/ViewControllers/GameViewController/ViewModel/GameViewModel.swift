@@ -13,7 +13,6 @@ class GameViewModel {
 
     var throwsData: [BallThrowsData] = []
     var framesData: [FrameData] = []
-    var currentScore: Int = 0
     
     let spareValue: Int = 10
     
@@ -22,19 +21,19 @@ class GameViewModel {
     
     var score: Int {
         var result = 0
-        var ballThrown = 0
+        var currentTurn = 0
         
         for _ in 1...10 {
-            if(isStrike(ballThrown: ballThrown)){
-                result += 10 + throwsData[ballThrown + 1].fallenPins + throwsData[ballThrown + 2].fallenPins
-                ballThrown += 1
+            if(isStrike(forTurn: currentTurn)){
+                result += 10 + strikeBonusValue(forTurn: currentTurn)
+                currentTurn += 1
             }
-            else if(isSpare(ballThrown: ballThrown)){
-                result += 10 + throwsData[ballThrown + 2].fallenPins
-                ballThrown += 2
+            else if(isSpare(forTurn: currentTurn)){
+                result += 10 + spareBonusValue(forTurn: currentTurn)
+                currentTurn += 2
             }else{
-                result += throwsData[ballThrown].fallenPins + throwsData[ballThrown+1].fallenPins
-                ballThrown += 2
+                result += openValue(forTurn: currentTurn)
+                currentTurn += 2
             }
         }
         
@@ -63,16 +62,24 @@ class GameViewModel {
         }
     }
     
-    func isSpare(ballThrown: Int) -> Bool {
-        return throwsData[ballThrown].fallenPins + throwsData[ballThrown + 1].fallenPins == 10 ? true : false
+    func isSpare(forTurn: Int) -> Bool {
+        return throwsData[forTurn].fallenPins + throwsData[forTurn + 1].fallenPins == 10 ? true : false
     }
     
-    func isStrike(ballThrown: Int) -> Bool {
-        return throwsData[ballThrown].fallenPins == 10 ? true : false
+    func isStrike(forTurn: Int) -> Bool {
+        return throwsData[forTurn].fallenPins == 10 ? true : false
     }
     
+    func strikeBonusValue(forTurn: Int) -> Int {
+        return throwsData[forTurn+1].fallenPins + throwsData[forTurn+2].fallenPins
+    }
     
+    func spareBonusValue(forTurn: Int) -> Int {
+        return throwsData[forTurn+2].fallenPins
+    }
     
+    func openValue(forTurn: Int) -> Int {
+        return throwsData[forTurn].fallenPins + throwsData[forTurn+1].fallenPins
+    }
     
-
 }

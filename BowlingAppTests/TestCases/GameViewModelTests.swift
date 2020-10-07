@@ -23,7 +23,7 @@ class GameViewModelTests: XCTestCase {
     }
     
     func testScore_MissedThrow(){
-        viewModel.throwBall(pins: 0)
+        viewModel.throwBallMultipleTimes(pins: 0,tries: 20)
         XCTAssertEqual(viewModel.score , 0)
     }
     
