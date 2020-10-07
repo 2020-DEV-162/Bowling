@@ -12,7 +12,7 @@ class GameViewModel {
     // MARK: - Properties
 
     var throwsData: [BallThrowsData] = []
-    var framesData: [FrameData] = []
+    var stringResult: String = ""
     
     let spareValue: Int = 10
     
@@ -40,18 +40,6 @@ class GameViewModel {
         return result
     }
     
-    var numberOfSections: Int {
-        1
-    }
-    
-    func viewModel(for index: Int) -> FrameViewModel {
-        FrameViewModel(frameData: framesData[index])
-    }
-
-    var numberOfFrames: Int {
-        framesData.count
-    }
-    
     func throwBall(pins: Int){
         throwsData.append(BallThrowsData(fallenPins: pins))
     }
@@ -62,6 +50,19 @@ class GameViewModel {
         }
     }
     
+    func playOpenFrame(firstThrow: Int, secondThrow: Int)
+    {
+        throwBall(pins: firstThrow)
+        throwBall(pins: secondThrow)
+    }
+    
+    func playMultipleOpenFrames(firstThrow: Int, secondThrow: Int, frames: Int){
+        for _ in 1...frames {
+            throwBall(pins: firstThrow)
+            throwBall(pins: secondThrow)
+        }
+    }
+    
     func isSpare(forTurn: Int) -> Bool {
         return throwsData[forTurn].fallenPins + throwsData[forTurn + 1].fallenPins == 10 ? true : false
     }
@@ -69,6 +70,7 @@ class GameViewModel {
     func isStrike(forTurn: Int) -> Bool {
         return throwsData[forTurn].fallenPins == 10 ? true : false
     }
+    
     
     func strikeBonusValue(forTurn: Int) -> Int {
         return throwsData[forTurn+1].fallenPins + throwsData[forTurn+2].fallenPins

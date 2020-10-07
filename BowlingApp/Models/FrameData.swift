@@ -10,18 +10,9 @@ import UIKit
 struct FrameData {
     // MARK: - Properties
     
-    let ballThrows: [BallThrowsData]
-    let type: FrameType
+    let firstThrow: FrameType
+    let secondThrow: FrameType
 
     // MARK: - Public API's
     
-    var baseScore: Int {
-        var result = 0
-        for ballThrow in ballThrows {
-            result += ballThrow.fallenPins
-        }
-        return result
-    }
-    
-    var endScore: Int = 0
 }
