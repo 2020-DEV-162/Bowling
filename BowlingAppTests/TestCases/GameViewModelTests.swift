@@ -32,6 +32,16 @@ class GameViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.score , 80)
     }
     
+    func testScore_Spare(){
+        viewModel.throwBall(pins: 4)
+        viewModel.throwBall(pins: 6)
+        viewModel.throwBall(pins: 3)
+        viewModel.throwBallMultipleTimes(pins: 0,tries: 17)
+        XCTAssertEqual(viewModel.score , 16)
+    }
+    
+    
+    
     
 
 }

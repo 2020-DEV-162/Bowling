@@ -15,25 +15,30 @@ class GameViewModel {
     var framesData: [FrameData] = []
     var currentScore: Int = 0
     
+    let spareValue: Int = 10
+    
     // MARK: - Public API
     
     
     var score: Int {
         var result = 0
-        for ballThrow in throwsData {
-            result += ballThrow.fallenPins
+        var ballThrown = 0
+        
+        for _ in 1...10 {
+            if(isSpare(ballThrown: ballThrown)){
+                result += 10 + throwsData[ballThrown + 2].fallenPins
+                ballThrown += 2
+            }else{
+                result += throwsData[ballThrown].fallenPins + throwsData[ballThrown+1].fallenPins
+                ballThrown += 2
+            }
         }
+        
         return result
     }
     
     var numberOfSections: Int {
         1
-    }
-    
-    func processFrame(){
-        for (index, ballThrow) in throwsData.enumerated(){
-            
-        }
     }
     
     func viewModel(for index: Int) -> FrameViewModel {
@@ -54,8 +59,12 @@ class GameViewModel {
         }
     }
     
-    private func lockFrame(ballThrow: [BallThrowsData], ofType: FrameType){
-        var frame: FrameData = FrameData(ballThrows: ballThrow, type: ofType)
+    func isSpare(ballThrown: Int) -> Bool {
+        return throwsData[ballThrown].fallenPins + throwsData[ballThrown + 1].fallenPins == 10 ? true : false
     }
+    
+    
+    
+    
 
 }
