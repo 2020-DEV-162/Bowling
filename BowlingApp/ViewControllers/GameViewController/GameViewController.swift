@@ -11,7 +11,7 @@ class GameViewController: UIViewController {
     // MARK: - Properties
     
     @IBOutlet weak var throwBallBtn: UIButton!
-    
+    @IBOutlet weak var scoreResultLabel: UILabel!
     // MARK: -
 
     // MARK: - Actions
