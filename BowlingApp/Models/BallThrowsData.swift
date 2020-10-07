@@ -13,5 +13,8 @@ struct BallThrowsData: Decodable {
     
     let fallenPins: Int
     
+    var isStrike: Bool {
+        return fallenPins == 10 ? true : false
+    }
     
 }

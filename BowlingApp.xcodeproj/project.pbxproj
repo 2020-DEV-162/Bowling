@@ -14,6 +14,7 @@
 		D07EA9C6252E41C4000FA7FB /* FrameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9C5252E41C4000FA7FB /* FrameViewModel.swift */; };
 		D07EA9CE252E4332000FA7FB /* BowlingAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9CD252E4332000FA7FB /* BowlingAppUITests.swift */; };
 		D07EA9D6252E4543000FA7FB /* FrameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9D5252E4543000FA7FB /* FrameData.swift */; };
+		D07EA9E3252E51F1000FA7FB /* FrameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07EA9E2252E51F1000FA7FB /* FrameType.swift */; };
 		D08CD208252E39780068BEDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CD207252E39780068BEDC /* AppDelegate.swift */; };
 		D08CD20C252E39780068BEDC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08CD20B252E39780068BEDC /* RootViewController.swift */; };
 		D08CD20F252E39780068BEDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08CD20D252E39780068BEDC /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		D07EA9C5252E41C4000FA7FB /* FrameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameViewModel.swift; sourceTree = "<group>"; };
 		D07EA9CD252E4332000FA7FB /* BowlingAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingAppUITests.swift; sourceTree = "<group>"; };
 		D07EA9D5252E4543000FA7FB /* FrameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameData.swift; sourceTree = "<group>"; };
+		D07EA9E2252E51F1000FA7FB /* FrameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameType.swift; sourceTree = "<group>"; };
 		D08CD204252E39780068BEDC /* BowlingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08CD207252E39780068BEDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D08CD20B252E39780068BEDC /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			path = TestCases;
 			sourceTree = "<group>";
 		};
+		D07EA9E1252E51DF000FA7FB /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				D07EA9E2252E51F1000FA7FB /* FrameType.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		D08CD1FB252E39780068BEDC = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		D08CD206252E39780068BEDC /* BowlingApp */ = {
 			isa = PBXGroup;
 			children = (
+				D07EA9E1252E51DF000FA7FB /* Types */,
 				D08CD23C252E39FC0068BEDC /* ViewControllers */,
 				D08CD23B252E39F20068BEDC /* Storyboards */,
 				D08CD23A252E39E90068BEDC /* Models */,
@@ -327,6 +338,7 @@
 				D07EA9C6252E41C4000FA7FB /* FrameViewModel.swift in Sources */,
 				D08CD208252E39780068BEDC /* AppDelegate.swift in Sources */,
 				D07EA9D6252E4543000FA7FB /* FrameData.swift in Sources */,
+				D07EA9E3252E51F1000FA7FB /* FrameType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

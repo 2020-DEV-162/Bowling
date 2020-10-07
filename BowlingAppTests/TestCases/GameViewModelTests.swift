@@ -27,6 +27,13 @@ class GameViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.score , 0)
     }
     
+    func testScore_FixedPinsPerThrow(){
+        for _ in 1...20 {
+            viewModel.throwBall(pins: 4)
+        }
+        XCTAssertEqual(viewModel.score , 80)
+    }
+    
     
 
 }
