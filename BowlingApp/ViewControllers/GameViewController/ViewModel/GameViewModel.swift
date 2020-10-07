@@ -48,6 +48,12 @@ class GameViewModel {
         throwsData.append(BallThrowsData(fallenPins: pins))
     }
     
+    func throwBallMultipleTimes(pins: Int, tries: Int){
+        for _ in 1...tries {
+            throwBall(pins: pins)
+        }
+    }
+    
     private func lockFrame(ballThrow: [BallThrowsData], ofType: FrameType){
         var frame: FrameData = FrameData(ballThrows: ballThrow, type: ofType)
     }
