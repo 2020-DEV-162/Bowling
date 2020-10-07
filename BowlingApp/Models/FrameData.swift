@@ -1,16 +1,16 @@
 //
-//  FrameDataViewModel.swift
+//  FrameData.swift
 //  BowlingApp
 //
 //  Created by Lionel Delvaux on 07/10/2020.
 //
 
-class FrameDataViewModel {
-    
+import UIKit
+
+struct FrameData: Decodable {
     // MARK: - Properties
     
-    var frame: [ThrowData] = []
+    let ballThrows: [BallThrowsData]
     
     // MARK: - Public API's
-    
 }

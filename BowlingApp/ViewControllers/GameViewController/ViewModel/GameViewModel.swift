@@ -11,7 +11,8 @@ class GameViewModel {
     
     // MARK: - Properties
 
-    var throwsData: [ThrowData] = []
+    var throwsData: [BallThrowsData] = []
+    var framesData: [FrameData] = []
     
     // MARK: - Public API
     
@@ -20,12 +21,26 @@ class GameViewModel {
         
         for (index, ballThrow) in throwsData.enumerated(){
             result += ballThrow.fallenPins
+            
         }
         
         return result
     }
     
+    var numberOfSections: Int {
+        1
+    }
+    
+    func viewModel(for index: Int) -> FrameViewModel {
+        FrameViewModel(frameData: framesData[index])
+    }
+
+    var numberOfFrames: Int {
+        framesData.count
+    }
+    
+    
     func throwBall(pins: Int){
-        throwsData.append(ThrowData(fallenPins: pins))
+        throwsData.append(BallThrowsData(fallenPins: pins))
     }
 }

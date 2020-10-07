@@ -26,5 +26,7 @@ class GameViewModelTests: XCTestCase {
         viewModel.throwBall(pins: 0)
         XCTAssertEqual(viewModel.score , 0)
     }
+    
+    
 
 }

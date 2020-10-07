@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ThrowData: Decodable {
+struct BallThrowsData: Decodable {
     
     // MARK: - Properties
     
