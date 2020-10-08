@@ -11,13 +11,18 @@ class GameViewModel {
     
     // MARK: - Properties
 
-    var throwsData: [BallThrowsData] = []
-    var stringResult: String = ""
+    private var throwsData: [BallThrowsData] = []
+    private let spareValue: Int = 10
     
-    let spareValue: Int = 10
     
     // MARK: - Public API
     
+    var stringResult: String = "0" {
+        didSet{
+            stringResultDidChange?(stringResult)
+        }
+    }
+    var stringResultDidChange: ((String) -> ())?
     
     var score: Int {
         var result = 0
@@ -58,30 +63,52 @@ class GameViewModel {
     
     func playMultipleOpenFrames(firstThrow: Int, secondThrow: Int, frames: Int){
         for _ in 1...frames {
-            throwBall(pins: firstThrow)
-            throwBall(pins: secondThrow)
+            playOpenFrame(firstThrow: firstThrow, secondThrow: secondThrow)
         }
     }
     
-    func isSpare(forTurn: Int) -> Bool {
+    private func isSpare(forTurn: Int) -> Bool {
         return throwsData[forTurn].fallenPins + throwsData[forTurn + 1].fallenPins == 10 ? true : false
     }
     
-    func isStrike(forTurn: Int) -> Bool {
+    private func isStrike(forTurn: Int) -> Bool {
         return throwsData[forTurn].fallenPins == 10 ? true : false
     }
     
     
-    func strikeBonusValue(forTurn: Int) -> Int {
+    private func strikeBonusValue(forTurn: Int) -> Int {
         return throwsData[forTurn+1].fallenPins + throwsData[forTurn+2].fallenPins
     }
     
-    func spareBonusValue(forTurn: Int) -> Int {
+    private func spareBonusValue(forTurn: Int) -> Int {
         return throwsData[forTurn+2].fallenPins
     }
     
-    func openValue(forTurn: Int) -> Int {
+    private func openValue(forTurn: Int) -> Int {
         return throwsData[forTurn].fallenPins + throwsData[forTurn+1].fallenPins
+    }
+    
+    func playGame(){
+        
+        initGame()
+        
+        let number = Int.random(in: 1..<4)
+        switch number {
+        case 1:
+            throwBallMultipleTimes(pins: 5,tries: 21)
+        case 2:
+            throwBallMultipleTimes(pins: 10,tries: 12)
+        case 3:
+            playMultipleOpenFrames(firstThrow: 9, secondThrow: 0, frames: 10)
+        default:
+            throwBallMultipleTimes(pins: 0,tries: 20)
+        }
+        
+        stringResult = "\(score) points"
+    }
+    
+    private func initGame(){
+        throwsData = []
     }
     
 }

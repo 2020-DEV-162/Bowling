@@ -60,7 +60,7 @@
                                 <rect key="frame" x="130" y="752" width="154" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="onthrowBallBtn:" destination="ERQ-Ts-eyf" eventType="touchUpInside" id="S5i-Dl-ZDH"/>
+                                    <action selector="onPlayGameBtn:" destination="ERQ-Ts-eyf" eventType="touchUpInside" id="S5i-Dl-ZDH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uuH-VC-orh">
@@ -91,8 +91,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="PlayGameBtn" destination="pHX-ao-fqj" id="W2T-fn-o99"/>
                         <outlet property="scoreResultLabel" destination="AYG-Pr-zLB" id="wgB-3b-Yog"/>
-                        <outlet property="throwBallBtn" destination="pHX-ao-fqj" id="W2T-fn-o99"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlD-d2-xIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
