@@ -68,24 +68,49 @@ class GameViewModel {
     }
     
     private func isSpare(forTurn: Int) -> Bool {
-        return throwsData[forTurn].fallenPins + throwsData[forTurn + 1].fallenPins == 10 ? true : false
+        if throwsData[safe: forTurn] != nil && throwsData[safe: forTurn+1] != nil{
+            return throwsData[forTurn].fallenPins + throwsData[forTurn + 1].fallenPins == 10 ? true : false
+        }else{
+            //Refering to the kata's problem description, this check is not mandatory
+            fatalError("Unexpected index error")
+        }
     }
     
     private func isStrike(forTurn: Int) -> Bool {
-        return throwsData[forTurn].fallenPins == 10 ? true : false
+        if throwsData[safe: forTurn] != nil {
+            return throwsData[forTurn].fallenPins == 10 ? true : false
+        }else{
+            //Refering to the kata's problem description, this check is not mandatory
+            fatalError("Unexpected index error")
+        }
     }
     
     
     private func strikeBonusValue(forTurn: Int) -> Int {
-        return throwsData[forTurn+1].fallenPins + throwsData[forTurn+2].fallenPins
+        if throwsData[safe: forTurn+1] != nil && throwsData[safe: forTurn+2] != nil{
+            return throwsData[forTurn+1].fallenPins + throwsData[forTurn+2].fallenPins
+        }else{
+            //Refering to the kata's problem description, this check is not mandatory
+            fatalError("Unexpected index error")
+        }
     }
     
     private func spareBonusValue(forTurn: Int) -> Int {
-        return throwsData[forTurn+2].fallenPins
+        if throwsData[safe: forTurn+2] != nil{
+            return throwsData[forTurn+2].fallenPins
+        }else{
+            //Refering to the kata's problem description, this check is not mandatory
+            fatalError("Unexpected index error")
+        }
     }
     
     private func openValue(forTurn: Int) -> Int {
-        return throwsData[forTurn].fallenPins + throwsData[forTurn+1].fallenPins
+        if throwsData[safe: forTurn] != nil{
+            return throwsData[forTurn].fallenPins + throwsData[forTurn+1].fallenPins
+        }else{
+            //Refering to the kata's problem description, this check is not mandatory
+            fatalError("Unexpected index error")
+        }
     }
     
     func playGame(){

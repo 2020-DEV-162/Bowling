@@ -54,12 +54,12 @@ class GameViewModelTests: XCTestCase {
     }
     
     func testScore_MaxScorePossible(){
-        viewModel.throwBallMultipleTimes(pins: 10,tries: 7)
+        viewModel.throwBallMultipleTimes(pins: 10,tries: 12)
         XCTAssertEqual(viewModel.score , 300)
     }
     
     func testSocre_NinePinsOneMissEach(){
-        viewModel.playMultipleOpenFrames(firstThrow: 9, secondThrow: 0, frames: 10)
+        viewModel.playMultipleOpenFrames(firstThrow: 9, secondThrow: 0, frames: 21)
         XCTAssertEqual(viewModel.score , 90)
     }
     
